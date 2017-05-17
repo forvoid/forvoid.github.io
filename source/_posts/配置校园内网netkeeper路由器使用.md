@@ -79,6 +79,7 @@ Usage: uci [] []
 * 2、配置成功后还是连接不上。这个我选择restart路由器。（不知道为什么需要重启，但是重启之后确实好了~~~~(>_<)~~~~）
 * 3、配置断点重连。这里主要是做网络是否中断，如果中断了重新network restart网络。直接贴代码
 
+
 ```
 #!/bin/sh
 #sleep 100
@@ -104,6 +105,7 @@ echo $DATE network restart >>my_watchdog.log
 #echo $DATE reboot >>my_watchdog.log
 #reboot
 ```
+
 这个是我在一个博客中看到的[博客地址（哈哈太长了就不给出链接url了）。点击就行](https://jamesqi.com/%E5%8D%9A%E5%AE%A2/OpenWRT%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%AD%E7%9B%91%E6%8E%A7%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%B9%B6%E9%87%8D%E5%90%AF%E7%9A%84%E8%84%9A%E6%9C%AC)其实自己也可以写。这就是shell编程。然后还有一步就是加入crontab命令，让他每5分钟执行一次。
 ```
 $ root@Openwrt:~# crontab -e
