@@ -1,4 +1,3 @@
-
 ---
 title: 配置校园内网netkeeper路由器使用📫
 date: 2017-05-15 11:11:18
@@ -6,11 +5,10 @@ tags:
 	- netkeeper
 ---
 # 前景介绍
-已经无法使用了。
 我的是在重庆邮电大学（CQUPT）进行配置的，我们学校的网是电信的netkeeper。每个人都用一个帐号在自己的电脑上进行帐号登录后上网。十分的不方便，尤其是用电脑开的wifi，有些不稳定。所以我在网上找到了诸多大神的配置方法进行配置，并且记录下来便于以后自己好查看。
 
 # 更新说明
-系统现已全面升级4.7 原有方法将无法使用。
+学校进行了netkeeper升级后无法使用了。现在全校使用了4.7的版本。
 5-16:解决了内网无法访问的问题
 5-15：配置好了第一版（基于斐讯k2 + openwrt），~~完成断网重连，自动拨号功能~~。未完成稳定性问题没有解决，。
 <!--more-->
@@ -87,33 +85,34 @@ Usage: uci [] []
 * 3、配置断点重连。这里主要是做网络是否中断，如果中断了重新network restart网络。直接贴代码
 
 
-```bash
-#!/bin/sh
-#sleep 100
-DATE=`date +%Y-%m-%d-%H:%M:%S`
-tries=0
-echo --- my_watchdog start ---
-while [[ $tries -lt 5 ]]
-do
-        if /bin/ping -c 1 8.8.8.8 >/dev/null #判断当前网络连接是否正常，如果正常的话就退出，如果不正常循环五次休息1os后
-        then
-                echo --- exit ---
-#               echo $DATE OK >>my_watchdog.log
-                exit 0
-        fi
-        tries=$((tries+1))
-        sleep 10
-#       echo $DATE tries: $tries >>my_watchdog.log
-done
+```
+	#!/bin/sh
+	#sleep 100
+	DATE=`date +%Y-%m-%d-%H:%M:%S`
+	tries=0
+	echo --- my_watchdog start ---
+	while [[ $tries -lt 5 ]]
+	do
+	        if /bin/ping -c 1 8.8.8.8 >/dev/null #判断当前网络连接是否正常，如果正常的话就退出，如果不正常循环五次休息1os后
+	        then
+	                echo --- exit ---
+	#               echo $DATE OK >>my_watchdog.log
+	                exit 0
+	        fi
+	        tries=$((tries+1))
+	        sleep 10
+	#       echo $DATE tries: $tries >>my_watchdog.log
+	done
 
-echo $DATE network restart >>my_watchdog.log
-/etc/init.d/network restart
+	echo $DATE network restart >>my_watchdog.log
+	/etc/init.d/network restart
 
-#echo $DATE reboot >>my_watchdog.log
-#reboot
+	#echo $DATE reboot >>my_watchdog.log
+	#reboot
 ```
 
 这个是我在一个博客中看到的[博客地址（哈哈太长了就不给出链接url了）。点击就行](https://jamesqi.com/%E5%8D%9A%E5%AE%A2/OpenWRT%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%AD%E7%9B%91%E6%8E%A7%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%B9%B6%E9%87%8D%E5%90%AF%E7%9A%84%E8%84%9A%E6%9C%AC)其实自己也可以写。这就是shell编程。然后还有一步就是加入crontab命令，让他每5分钟执行一次。
+
 ```
 $ root@Openwrt:~# crontab -e
 然后输入
@@ -122,6 +121,7 @@ $ root@Openwrt:~# crontab -e
 0 */1 * * * rm -rf /root/my_watchdog.log #1h启动一次
 0 */12 * * * rm -rf /root/error.log #12h启动一次
 ```
+
 这样就差不多了。
 # 下面放上一些我觉得我需要的资源
 * 我的备份配置包就是/etc目录下的文件(我去掉了我的帐号信息)[下载地址](../../../../files/netkeeper_package/backup-OpenWrt-2017-05-15.tar.gz)

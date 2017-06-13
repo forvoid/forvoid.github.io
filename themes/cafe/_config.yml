@@ -81,7 +81,7 @@ tagcloud_color: true
 mathjax:
   enable: true
   per_page: false
-  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 
 
@@ -89,16 +89,32 @@ mathjax:
 google_analytics:
 favicon: /favicon.png
 
-#comments 评论插件
+# comments 评论插件
 # 关闭统一为 false
-# 若使用多说，此处填写的是多说评论账号ID
+
 ## 网易云跟帖
 ### 使用说明 http://cafe.giscafer.com/2017/04/14/gentie-test/
-# gentie_productKey: e2fb4051c49842xxce669e634bc983f
-## 多说 （2017年6月将关闭）
-#duoshuo_shortname: 6298571525045880000
+gentie_productKey: false
+
+## gitment https://imsun.net/posts/gitment-introduction/
+gitment_owner: forvoid
+gitment_repo: forvoid.github.io
+gitment_client_id: 56eff63fef1b5b37f568
+gitment_client_secret: 4856dd988c9157b0dcf2c83c94ab4c912621d347
+
+## 畅言 (不使用请将appid和appkey都设空或者false)
+### 使用说明：http://changyan.kuaizhan.com/static/help/
+changyan_appid: false
+# cyt3QCrN8  ##appid
+changyan_appkey: false
+# 0609f6327fea62e6dada4cd56ddc2394  ##appkey
+## 友言
+### 使用说明
+### 填写友言用户ID http://www.uyan.cc/sites
+# youyan_uid: false
+
 ## disqus
-disqus_shortname: forvoid
-#google_plus:
-#fb_admins:
-#fb_app_id:
+disqus_shortname: false
+google_plus:
+fb_admins:
+fb_app_id:
