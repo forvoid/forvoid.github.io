@@ -92,7 +92,7 @@ markdown:
     - markdown-it-emoji
     # - hexo-tag-emojis
   anchors:
-    level: 3
+    level: 2
     collisionSuffix: 'v'
     permalink: true
     permalinkClass: header-anchor
