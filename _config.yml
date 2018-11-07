@@ -71,9 +71,12 @@ theme: cafe
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: 
-    git@github.com:forvoid/forvoid.github.io.git,gh-pagesr
-  #  git@git.dev.tencent.com:forvoid/forvoid.git,master
+  repository: git@git.dev.tencent.com:forvoid/forvoid.git,master
+
+
+# branch: gh-pages
+
+#  git@git.dev.tencent.com:forvoid/forvoid.git,master
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
