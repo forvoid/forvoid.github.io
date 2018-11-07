@@ -46,7 +46,7 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
     - markdown-it-emoji
-    # - hexo-tag-emojis
+    #- hexo-tag-emojis
   anchors:
     level: 2
     collisionSuffix: 'v'

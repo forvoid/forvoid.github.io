@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://forvoid.me
+url: https://blog.forvoid.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -71,7 +71,9 @@ theme: cafe
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:forvoid/forvoid.github.io.git
+  repo: 
+    git@github.com:forvoid/forvoid.github.io.git,gh-pagesr
+  #  git@git.dev.tencent.com:forvoid/forvoid.git,master
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
@@ -90,7 +92,6 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
     - markdown-it-emoji
-    # - hexo-tag-emojis
   anchors:
     level: 2
     collisionSuffix: 'v'

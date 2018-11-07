@@ -101,8 +101,8 @@ gentie_productKey: false
 ## gitment https://imsun.net/posts/gitment-introduction/
 gitment_owner: forvoid
 gitment_repo: forvoid.github.io
-gitment_client_id: 56eff63fef1b5b37f568
-gitment_client_secret: 4856dd988c9157b0dcf2c83c94ab4c912621d347
+gitment_client_id: 6bc65aa532ef5e4317e7
+gitment_client_secret: e47cd980ab770f7ecf4cb77902bbb2e7a8084268
 
 ## 畅言 (不使用请将appid和appkey都设空或者false)
 ### 使用说明：http://changyan.kuaizhan.com/static/help/
