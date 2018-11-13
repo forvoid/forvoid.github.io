@@ -8,7 +8,10 @@ categories:
 
 ![首图](https://raw.githubusercontent.com/forvoid/imageHosting/master/blog/bug/lindanov.12.png)
 
-今天在项目启动的时候报错，java.lang.NoClassDefFoundError: org/apache/logging/log4j/util/ReflectionUtil 导致整个服务无法启动 具体的错误日志如下：`我们采用的resin作为java ee容器`
+今天在项目启动的时候报错，java.lang.NoClassDefFoundError: org/apache/logging/log4j/util/ReflectionUtil 导致整个服务无法启动 
+<!-- more -->
+具体的错误日志如下：`我们采用的resin作为java ee容器`
+
 ```log
 [18-11-13 20:55:01.758] {resin-21} WebApp[production/webapp/default/ROOT,STARTING] Set web app root system property: 'webapp.root' = [/home/work/bin/netroam-api/webapp/]
 [18-11-13 20:55:01.768] {resin-21} WebvApp[production/webapp/default/ROOT] fail
