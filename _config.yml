@@ -71,8 +71,8 @@ theme: cafe
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:forvoid/forvoid.github.io.git,gh-pages
-  #repository: git@git.dev.tencent.com:forvoid/forvoid.git,master
+  #repository: git@github.com:forvoid/forvoid.github.io.git,gh-pages
+  repository: git@git.dev.tencent.com:forvoid/forvoid.git,master
 
 
 # branch: gh-pages
